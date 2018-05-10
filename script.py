@@ -90,7 +90,7 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)               
-                            respo = {"fulfillmentText": "This is not greeting intent","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                            respo = {"fulfillmentText": "OOPS sorry!Please chat sometime later","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
     #session = request.json["session"]
     #querytext = request.json["querytext"]

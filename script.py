@@ -77,11 +77,11 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
-                            elif req[header][item][option] == "askotp":
+                            elif req[header][item][option] == "otp":
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
-                                            if para == "otp":
+                                            if para == "otpno":
                                                 p = re.compile(r'^\d{6}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):

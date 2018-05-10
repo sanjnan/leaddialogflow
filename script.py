@@ -68,7 +68,7 @@ def posti():
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
-                                            if para == "mobilenumber":
+                                            if para == "mobnum":
                                                 p = re.compile(r'^[6789]\d{9}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
@@ -77,11 +77,11 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
-                            respo = {"fulfillmentText": "This is not greeting intent","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                            respo = {"fulfillmentText": "OOPS! Something is wrong, we will contact you","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
     #session = request.json["session"]
     #querytext = request.json["querytext"]
-    #mobilenumber = request.json["mobilenumber"]
+    #mobnum = request.json["mobnum"]
 
 
 @app.route('/about/')

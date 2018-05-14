@@ -95,7 +95,7 @@ def posti():
                                     if itm == "parameters":
                                         for para in req[header][itm]:
                                             if para == "agr_num":
-                                                p = re.compile(^[xX]\D{6}\d{11}$',re.I|re.M)
+                                                p = re.compile(r'^[xX]\D{6}\d{11}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
                                                     respo = {"fulfillmentText": "Choose your SR Type ? NOC,SOA or Others","fulfillmentMessages": [{"card":{"buttons": [{"text": "Apply Loan", "postback": "Apply for Loan"},{"text": "Service Request", "postback": "Raise a Request"}]}}],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}

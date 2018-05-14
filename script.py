@@ -77,7 +77,7 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
-                            elif req[header][item][option] == "askmobile - otp":
+                            elif req[header][item][option] == "askotp":
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
@@ -85,11 +85,24 @@ def posti():
                                                 p = re.compile(r'^\d{6}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "what you are looking for ? Loan,Customer service","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "what you are looking for ? Apply for Loan or Customer Service","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
-                                                    return jsonify(respo)               
+                                                    return jsonify(respo)  
+                              elif req[header][item][option] == "agr_num":
+                                for itm in req[header]:
+                                    if itm == "parameters":
+                                        for para in req[header][itm]:
+                                            if para == "agr_num":
+                                                p = re.compile(^[xX]\D{6}\d{11}$',re.I|re.M)
+                                                print (req[header][itm][para])
+                                                if p.match(str(req[header][itm][para])):
+                                                    respo = {"fulfillmentText": "Choose your SR Type","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    return jsonify(respo)
+                                                else:
+                                                    respo = {"fulfillmentText": "Owh!That's an invalid agreement number. Please enter the right one.","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    return jsonify(respo) 
                             respo = {"fulfillmentText": "This is not greeting intent","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
     #session = request.json["session"]

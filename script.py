@@ -89,7 +89,20 @@ def posti():
                                                     return jsonify(respo)
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
-                                                    return jsonify(respo)               
+                                                    return jsonify(respo) 
+                            elif req[header][item][option] == "agr_num":
+                                for itm in req[header]:
+                                    if itm == "parameters":
+                                        for para in req[header][itm]:
+                                            if para == "agr_num":
+                                                p = re.compile(^[xX]\D{6}\d{11}$',re.I|re.M)
+                                                print (req[header][itm][para])
+                                                if p.match(str(req[header][itm][para])):
+                                                    respo = {"fulfillmentText": "Choose your SR Type ? NOC,SOA or Others","fulfillmentMessages": [{"card":{"buttons": [{"text": "Apply Loan", "postback": "Apply for Loan"},{"text": "Service Request", "postback": "Raise a Request"}]}}],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    return jsonify(respo)
+                                                else:
+                                                    respo = {"fulfillmentText": "Please enter a valid Agreement Number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    return jsonify(respo) 
                             respo = {"fulfillmentText": "OOPS!Something went wrong, our executive will get back to you.Thanks","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)
     #session = request.json["session"]

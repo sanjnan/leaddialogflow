@@ -90,7 +90,7 @@ def posti():
                                                 else:
                                                     respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
                                                     return jsonify(respo) 
-							elif req[header][item][option] == "service_req":
+			    elif req[header][item][option] == "service_req":
                                  respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                  return jsonify(respo) 					
                             elif req[header][item][option] == "agr_num":

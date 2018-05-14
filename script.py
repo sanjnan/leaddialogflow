@@ -72,10 +72,10 @@ def posti():
                                                 p = re.compile(r'^[6789]\d{9}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "Please enter the OTP received","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "Please enter the OTP received","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
                                                     return jsonify(respo)
                                                 else:
-                                                    respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "Please enter a valid 10 digit mobile","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "mob"}}
                                                     return jsonify(respo)
                             elif req[header][item][option] == "askotp":
                                 for itm in req[header]:
@@ -85,10 +85,10 @@ def posti():
                                                 p = re.compile(r'^\d{6}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "OTP has been verified successfully. Do you wanna apply for loan or track your request?","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "OTP has been verified successfully. Do you wanna apply for loan or track your request?","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "sr"}}
                                                     return jsonify(respo)
                                                 else:
-                                                    respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
                                                     return jsonify(respo) 
                             elif req[header][item][option] == "agr_num":
                                 for itm in req[header]:
@@ -98,10 +98,10 @@ def posti():
                                                 p = re.compile(r'^[xX]\D{6}\d{11}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "Choose your SR Type ? NOC,SOA or Others","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "Choose your SR Type ? NOC,SOA or Others","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "agr"}}
                                                     return jsonify(respo)
                                                 else:
-                                                    respo = {"fulfillmentText": "Please enter a valid Agreement Number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
+                                                    respo = {"fulfillmentText": "Please enter a valid Agreement Number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "sr"}}
                                                     return jsonify(respo) 
                             respo = {"fulfillmentText": "OOPS!Something went wrong, our executive will get back to you.Thanks","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)

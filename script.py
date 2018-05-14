@@ -88,10 +88,8 @@ def posti():
                                                     respo = {"fulfillmentText": "OTP has been verified successfully. Do you wanna apply for loan or track your request?","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                                                 else:
-                                                    respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "otp"}}
+                                                    respo = {"fulfillmentText": "Please enter a valid 6 digits OTP sent to your mobile number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo) 
-                            elif req[header][item][option] == "service_req":
-                                 respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             elif req[header][item][option] == "agr_num":
                                 for itm in req[header]:
                                     if itm == "parameters":
@@ -100,10 +98,10 @@ def posti():
                                                 p = re.compile(r'^[xX]\D{6}\d{11}$',re.I|re.M)
                                                 print (req[header][itm][para])
                                                 if p.match(str(req[header][itm][para])):
-                                                    respo = {"fulfillmentText": "Choose your SR Type ? NOC,SOA or Others","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "remark"}}
+                                                    respo = {"fulfillmentText": "Choose your SR Type ? NOC,SOA or Others","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo)
                                                 else:
-                                                    respo = {"fulfillmentText": "Please enter a valid Agreement Number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {"name": "agr"}}
+                                                    respo = {"fulfillmentText": "Please enter a valid Agreement Number","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                                     return jsonify(respo) 
                             respo = {"fulfillmentText": "OOPS!Something went wrong, our executive will get back to you.Thanks","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                             return jsonify(respo)

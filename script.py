@@ -93,7 +93,7 @@ def posti():
 			    elif req[header][item][option] == "service_req":
                                  respo = {"fulfillmentText": "","fulfillmentMessages": [],"source": "example.com","payload": {},"outputContexts": [ ],"followupEventInput": {}}
                                  return jsonify(respo) 					
-                            elif req[header][item][option] == "ag_num":
+                            elif req[header][item][option] == "agr_num":
                                 for itm in req[header]:
                                     if itm == "parameters":
                                         for para in req[header][itm]:
